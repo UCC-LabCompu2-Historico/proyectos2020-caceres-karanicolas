@@ -1,0 +1,21 @@
+body{
+    text-align: center;
+    font-family: 'Gugi', cursive;
+}
+div{
+    border: 2px  black;
+    margin: 10px;
+    padding: 5px 30px;
+    border-radius: 15px;
+}
+#principal{
+    width: 200px;
+    float: left;
+    border-radius: 50%;
+}
+div .botonera{
+    border: 2px  black;
+    margin: 10px;
+    padding: 5px 30px;
+    border-radius: 15px;
+}
