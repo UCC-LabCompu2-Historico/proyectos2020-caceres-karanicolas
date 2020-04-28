@@ -15,7 +15,7 @@ body {
     background-image: url("Wireframe/Background.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 #Fotoprincipal{
@@ -52,4 +52,15 @@ body {
     font-family: Papyrus;
     color: #faf3ff;
     font-weight: bold;
+}
+
+.Information{
+    text-align: left;
+    font-family: Papyrus;
+    color: white;
+    font-weight: bold;
+}
+#Distance From Earth{
+    text-align: center;
+    border-radius: 50%;
 }
