@@ -13,6 +13,7 @@
 
 body {
     background-image: url("Wireframe/Background.jpeg");
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
     overflow-x: hidden;
@@ -59,8 +60,15 @@ body {
     font-family: Papyrus;
     color: white;
     font-weight: bold;
+    padding: 10px;
 }
 #Distance From Earth{
     text-align: center;
-    border-radius: 50%;
+}
+
+.titulo{
+    text-align: center;
+    font-family: Papyrus;
+    color: #3366ff;
+    font-weight: bold;
 }
