@@ -17,3 +17,7 @@ Considerada desde la antigüedad como una única estrella y con gran importancia
     - CSS
 
 proyectos2020-caceres-karanicolas created by GitHub Classroom
+
+ ## Link al sitio:
+ 
+  [Discovering Alpha Centauri](https://ucc-labcompu2.github.io/proyectos2020-caceres-karanicolas/index.html)
