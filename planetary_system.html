@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head onload="dibujarEstrellas()">
     <meta charset="UTF-8">
     <title>Discovering Alpha Centauri</title>
     <link rel="icon" href="Multimedia/Logo_Sitio.jpg">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="estilo.css" type="text/css">
     <script src="funcionesAlphaC.js" type="text/javascript"></script>
 </head>
-<body>
+<body onload="dibujarEstrellas()">
 <header class="cabecera">
     <img id="Fotoprincipal" src="Multimedia/Logo_Sitio.jpg">
     <h1>Discovering Alpha Centauri</h1>
@@ -20,13 +20,16 @@
     <a class="Boton2 Boton" href="information.html">Information</a>
 </div>
 
-<div class="fecha">
-    <form>
-        Fecha de nacimiento <input type="date">
+<div>
+    <form name="formulario" onsubmit="event.preventDefault();moverplanetas();">
+        <label for="fecha"></label>
+        <input type="text" id="fecha" name="fechayear" maxlength="4" placeholder="Año">
+        <input type="submit" value="OK">
     </form>
 </div>
 
 <canvas id="Canvas" width="800" height="400" ></canvas>
+
 
 
 <footer>
