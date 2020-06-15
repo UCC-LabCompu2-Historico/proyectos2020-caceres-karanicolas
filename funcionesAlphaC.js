@@ -23,14 +23,26 @@ var estrellas = [
     {
         nombre:"Alpha Centauri B",
         h:200,
-        y: 150,
+        y: 268,
         r: 80,
         c: 80,
         tamanio: 24,
         color: "#6f72df",
         mostrar: true,
-        velocidad: 0.0107,
-        pos_rad:Math.PI/4
+        velocidad: 1,
+        pos_rad:Math.PI/2
+    },
+    {
+        nombre: "Proxima Centauri",
+        h: 200,
+        y: 268,
+        r: 80,
+        c: 80,
+        tamanio: 20,
+        color: "#dadf9e",
+        mostrar: true,
+        velocidad: 0.01,
+        pos_rad: Math.PI / 2
     }
 ]
 
@@ -43,7 +55,7 @@ function dibujarEstrellas() {
 
     //Elipse
     ctx.beginPath();
-    ctx.ellipse(cenX - 50, cenY, 200, 150, Math.PI / 4, 0, 2 * Math.PI,false);
+    ctx.ellipse(cenX - 50, cenY, 160, 170, Math.PI / 2, 0, 2 * Math.PI,false);
     ctx.stroke();
     ctx.closePath();
 
@@ -67,7 +79,7 @@ function dibujarEstrellas() {
         ctx.closePath();
 
         if(i.mostrar) {
-            //planetas
+            //planeta
             ctx.beginPath();
             ctx.fillStyle = i.color;
             ctx.moveTo(i.x, i.y);
@@ -83,7 +95,7 @@ function dibujarEstrellas() {
             ctx.beginPath();
             ctx.fillStyle = i.color;
             ctx.moveTo(i.x, i.y);
-            ctx.ellipse(i.x, i.y,i.tamanio,i.tamanio, Math.PI / 4, 0, 2 * Math.PI,false);
+            ctx.ellipse(i.x, i.y,i.tamanio,i.tamanio, Math.PI / 2, 0, 2 * Math.PI,false);
             ctx.stroke();
             ctx.fill();
             ctx.closePath();
@@ -92,7 +104,6 @@ function dibujarEstrellas() {
 }
 var interval;
 
-var a=0;
 
 function moverplanetas() {
     clearInterval(interval);
@@ -113,7 +124,8 @@ function moverElipse() {
     var x = document.forms["formulario"]["fechayear"].value/2000;
 
     for(var i of estrellas){
-        (i.h*i.h) = (i.r*i.r)*(Math.cos(i.pos_rad)*Math.cos(i.pos_rad))-(2*i.r*Math.cos(i.pos_rad)*i.c)+(i.c*i.c);
+        i.h +=x;
+        i.x = (i.r*i.r)*(Math.cos(i.pos_rad)*Math.cos(i.pos_rad))-(2*i.r*Math.cos(i.pos_rad)*i.c)+(i.c*i.c);
     }
     interval=setInterval(animacion, 10);
 }
