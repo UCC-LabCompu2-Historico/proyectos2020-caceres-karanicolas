@@ -15,6 +15,7 @@ Considerada desde la antigüedad como una única estrella y con gran importancia
  ## Tecnologias:
     - HTML
     - CSS
+    -Javascript
 
 
  ## Link al sitio:
