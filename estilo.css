@@ -83,11 +83,17 @@ a:active{
 }
 
 .titulo{
-    text-align: center;
+     text-align: center;
+     font-family: Papyrus;
+     color: #3366ff;
+     font-weight: bold;
+ }
+.texto{
+    text-align: left;
     font-family: Papyrus;
     color: #3366ff;
-    font-weight: bold;
 }
+
 
 #Canvas{
     background:black;
