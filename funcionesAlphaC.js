@@ -1,10 +1,3 @@
-/**
- * Dibuja los planetas
- * @method dibujar_estrellas
- * @param Parámetro A
- * @return Valor que retorna
- */
-
 var planeta = [
     {
         nombre:"Star planet",
@@ -12,7 +5,7 @@ var planeta = [
         y: 268,
         orbita: 80,
         tamanio: 12,
-        color: "#dfd743",
+        color: "#2fdf20",
         mostrar: true,
         velocidad: 0.0410,
         pos_rad:0
@@ -25,7 +18,7 @@ var estrellas = [
         y: 310,
         orbita: 140,
         tamanio: 30,
-        color: "#6f72df",
+        color: "#6a03df",
         mostrar: true,
         velocidad: 0.0107,
         pos_rad:43
@@ -42,6 +35,10 @@ var estrellas = [
         pos_rad:16
     }
 ];
+/**
+ * Dibuja los planetas
+ * @method dibujarEstrellas
+ */
 
 function dibujarEstrellas() {
     var canvas = document.getElementById('Canvas');
@@ -106,7 +103,12 @@ for(var i of estrellas){
 }
 }
 
-// Validar el año ingresado - alerta
+/**
+ * Validar Año ingresado
+ * @method validar
+ * @param Parámetro formulario, year
+ */
+
 function validar() {
     var x = document.forms["formulario"]["year"].value;
 
@@ -126,7 +128,11 @@ function validar() {
 
 var interval;
 
-a=0;
+/**
+ * Movimiento planetario, despues de dibujarlos vuelven a cero
+ * @method moverplanetas
+ * @param Parámetro year
+ */
 
 function moverplanetas() {
     clearInterval(interval);
@@ -146,6 +152,12 @@ function moverplanetas() {
 
     interval=setInterval(animacion, 10);
 }
+
+/**
+ * Movimiento de traslacion
+ * @method animacion
+ * @param planeta, estrellas
+ */
 
 function animacion(){
     for(var i of planeta){
