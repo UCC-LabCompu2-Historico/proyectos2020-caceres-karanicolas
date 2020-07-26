@@ -92,6 +92,13 @@ a:active{
     text-align: left;
     font-family: Papyrus;
     color: #3366ff;
+    font-weight: bold;
+}
+.lista{
+    text-align: left;
+    font-family: Papyrus;
+    color: #3366ff;
+    font-weight: bold;
 }
 
 
