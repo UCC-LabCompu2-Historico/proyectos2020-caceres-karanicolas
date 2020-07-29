@@ -56,7 +56,7 @@ function dibujarEstrellas() {
     ctx.stroke();
     ctx.closePath();
 
-      for(var i of planeta){
+    for(var i of planeta){
 
         //orbitaAlphaA
         ctx.beginPath();
@@ -79,34 +79,33 @@ function dibujarEstrellas() {
     }
 
 
-for(var i of estrellas){
+    for(var i of estrellas){
 
-    var eje=cenX-50;
-    //orbitaAlphaB
-    ctx.beginPath();
-    ctx.moveTo(eje+i.orbita,200);
-    ctx.arc(eje, cenY, i.orbita, 0, 2 * Math.PI, false);
-    ctx.strokeStyle = "white";
-    ctx.stroke();
-    ctx.closePath();
-
-    if(i.mostrar) {
-        //estrellas
+        var eje=cenX-50;
+        //orbitaAlphaB
         ctx.beginPath();
-        ctx.fillStyle = i.color;
-        ctx.moveTo(i.x, i.y);
-        ctx.arc(i.x, i.y, i.tamanio, 0, 2 * Math.PI, false);
+        ctx.moveTo(eje+i.orbita,200);
+        ctx.arc(eje, cenY, i.orbita, 0, 2 * Math.PI, false);
+        ctx.strokeStyle = "white";
         ctx.stroke();
-        ctx.fill();
         ctx.closePath();
+
+        if(i.mostrar) {
+            //estrellas
+            ctx.beginPath();
+            ctx.fillStyle = i.color;
+            ctx.moveTo(i.x, i.y);
+            ctx.arc(i.x, i.y, i.tamanio, 0, 2 * Math.PI, false);
+            ctx.stroke();
+            ctx.fill();
+            ctx.closePath();
+        }
     }
-}
 }
 
 /**
  * Validar Año ingresado
  * @method validar
- * @param Parámetro formulario, year
  */
 
 function validar() {
@@ -131,7 +130,6 @@ var interval;
 /**
  * Movimiento planetario, despues de dibujarlos vuelven a cero
  * @method moverplanetas
- * @param Parámetro year
  */
 
 function moverplanetas() {
@@ -156,7 +154,6 @@ function moverplanetas() {
 /**
  * Movimiento de traslacion
  * @method animacion
- * @param planeta, estrellas
  */
 
 function animacion(){
