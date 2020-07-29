@@ -6,7 +6,6 @@ var planeta = [
         orbita: 80,
         tamanio: 12,
         color: "#2fdf20",
-        mostrar: true,
         velocidad: 0.0410,
         pos_rad:0
     }
@@ -19,7 +18,6 @@ var estrellas = [
         orbita: 140,
         tamanio: 30,
         color: "#6a03df",
-        mostrar: true,
         velocidad: 0.0107,
         pos_rad:43
     },
@@ -30,7 +28,6 @@ var estrellas = [
         orbita: 180,
         tamanio: 25,
         color: "#dadf9e",
-        mostrar: true,
         velocidad: 0.0211,
         pos_rad:16
     }
@@ -56,9 +53,9 @@ function dibujarEstrellas() {
     ctx.stroke();
     ctx.closePath();
 
-      for(var i of planeta){
+    for(var i of planeta){
 
-        //orbitaAlphaA
+        //orbita
         ctx.beginPath();
         ctx.moveTo(cenX+i.orbita,200);
         ctx.arc(cenX, cenY, i.orbita, 0, 2 * Math.PI, false);
@@ -66,31 +63,29 @@ function dibujarEstrellas() {
         ctx.stroke();
         ctx.closePath();
 
-        if(i.mostrar) {
-            //planeta
-            ctx.beginPath();
-            ctx.fillStyle = i.color;
-            ctx.moveTo(i.x, i.y);
-            ctx.arc(i.x, i.y, i.tamanio, 0, 2 * Math.PI, false);
-            ctx.stroke();
-            ctx.fill();
-            ctx.closePath();
-        }
+        //StarPlanet
+        ctx.beginPath();
+        ctx.fillStyle = i.color;
+        ctx.moveTo(i.x, i.y);
+        ctx.arc(i.x, i.y, i.tamanio, 0, 2 * Math.PI, false);
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+
     }
 
 
-for(var i of estrellas){
+    for(var i of estrellas){
 
-    var eje=cenX-50;
-    //orbitaAlphaB
-    ctx.beginPath();
-    ctx.moveTo(eje+i.orbita,200);
-    ctx.arc(eje, cenY, i.orbita, 0, 2 * Math.PI, false);
-    ctx.strokeStyle = "white";
-    ctx.stroke();
-    ctx.closePath();
+        var eje=cenX-50;
+        //orbitaEstrellas
+        ctx.beginPath();
+        ctx.moveTo(eje+i.orbita,200);
+        ctx.arc(eje, cenY, i.orbita, 0, 2 * Math.PI, false);
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+        ctx.closePath();
 
-    if(i.mostrar) {
         //estrellas
         ctx.beginPath();
         ctx.fillStyle = i.color;
@@ -99,14 +94,13 @@ for(var i of estrellas){
         ctx.stroke();
         ctx.fill();
         ctx.closePath();
+
     }
-}
 }
 
 /**
  * Validar Año ingresado
  * @method validar
- * @param Parámetro formulario, year
  */
 
 function validar() {
@@ -114,13 +108,6 @@ function validar() {
 
     if (x == "" || x<0 || x.length<4 || isNaN(x)==1) {
         alert("Debe ingresar año valido");
-        for(var i of planeta){
-            i.mostrar=false;
-        }
-    } else{
-        for(var i of planeta){
-            i.mostrar=true;
-        }
     }
     return false;
 
@@ -131,7 +118,6 @@ var interval;
 /**
  * Movimiento planetario, despues de dibujarlos vuelven a cero
  * @method moverplanetas
- * @param Parámetro year
  */
 
 function moverplanetas() {
@@ -156,7 +142,6 @@ function moverplanetas() {
 /**
  * Movimiento de traslacion
  * @method animacion
- * @param planeta, estrellas
  */
 
 function animacion(){
